@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Carta para Janely</title>
+    <title>Carta para Janice</title>
 
-    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,6 +26,7 @@
       * {
         box-sizing: border-box;
       }
+
       html,
       body {
         height: 100%;
@@ -36,8 +36,7 @@
         margin: 0;
         color: var(--ink);
         font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial;
-        /* fondo animado */
+          Helvetica, Arial, sans-serif;
         background: radial-gradient(
             1000px 700px at 15% 0%,
             #ffffffaa 0%,
@@ -52,6 +51,7 @@
         place-items: center;
         padding: clamp(16px, 4vw, 48px);
       }
+
       @keyframes bg-pan {
         0% {
           background-position: 0% 50%;
@@ -64,7 +64,6 @@
         }
       }
 
-      /* blobs decorativos */
       .blobs {
         position: fixed;
         inset: -10%;
@@ -73,11 +72,13 @@
         filter: blur(40px) saturate(120%);
         opacity: 0.55;
       }
+
       .blob {
         position: absolute;
         border-radius: 50%;
         mix-blend-mode: soft-light;
       }
+
       .blob.b1 {
         width: 36vmax;
         height: 36vmax;
@@ -86,6 +87,7 @@
         background: #ffd6e6;
         animation: float1 22s ease-in-out infinite;
       }
+
       .blob.b2 {
         width: 30vmax;
         height: 30vmax;
@@ -94,6 +96,7 @@
         background: #e6ddff;
         animation: float2 26s ease-in-out infinite;
       }
+
       .blob.b3 {
         width: 42vmax;
         height: 42vmax;
@@ -102,6 +105,7 @@
         background: #daf3ff;
         animation: float3 30s ease-in-out infinite;
       }
+
       @keyframes float1 {
         0%,
         100% {
@@ -111,6 +115,7 @@
           transform: translateY(-18px);
         }
       }
+
       @keyframes float2 {
         0%,
         100% {
@@ -120,6 +125,7 @@
           transform: translateY(22px);
         }
       }
+
       @keyframes float3 {
         0%,
         100% {
@@ -130,7 +136,6 @@
         }
       }
 
-      /* tarjeta */
       .card {
         position: relative;
         z-index: 1;
@@ -150,17 +155,20 @@
         gap: 12px;
         margin-bottom: 8px;
       }
+
       .title {
         font-family: "Playfair Display", serif;
         font-size: clamp(28px, 4.6vw, 44px);
         line-height: 1.15;
         margin: 0;
       }
+
       .subtitle {
         margin: 6px 0 0;
         color: var(--ink-soft);
         font-size: clamp(12px, 1.6vw, 14px);
       }
+
       .divider {
         height: 1px;
         margin: 14px 0 20px;
@@ -172,18 +180,10 @@
         );
       }
 
-      canvas#particles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
       .letter {
         font-size: clamp(16px, 1.9vw, 18px);
         line-height: 1.8;
-        min-height: 260px; /* reserva espacio para que no salte el layout */
+        min-height: 260px;
         white-space: normal;
       }
 
@@ -202,10 +202,12 @@
         justify-content: space-between;
         margin-top: 16px;
       }
+
       .pager {
         font-size: 13px;
         color: var(--ink-soft);
       }
+
       .btn {
         appearance: none;
         border: 0;
@@ -220,16 +222,19 @@
         transition: transform 0.08s ease, box-shadow 0.2s ease,
           opacity 0.2s ease;
       }
+
       .btn:hover {
         transform: translateY(-1px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
       }
+
       .btn:disabled {
         opacity: 0.5;
         cursor: not-allowed;
         transform: none;
         box-shadow: none;
       }
+
       .btn.alt {
         background: var(--accent);
       }
@@ -242,25 +247,26 @@
         user-select: none;
       }
 
-      /* transiciones sutiles al cambiar de página */
       .fade-enter {
         opacity: 0;
         transform: translateY(4px);
       }
+
       .fade-enter-active {
         opacity: 1;
         transform: translateY(0);
         transition: opacity 0.35s ease, transform 0.35s ease;
       }
 
-      /* Respeta preferencias del usuario */
       @media (prefers-reduced-motion: reduce) {
         body {
           animation: none;
         }
+
         .blob {
           animation: none;
         }
+
         .fade-enter,
         .fade-enter-active {
           transition: none;
@@ -278,7 +284,7 @@
     <main class="card">
       <header class="h">
         <div>
-          <h1 class="title">Para Janely</h1>
+          <h1 class="title">Para Janice</h1>
           <p class="subtitle">Una carta de Diego</p>
         </div>
       </header>
@@ -301,11 +307,13 @@
 
     <script>
       const pages = [
-        `Janely
+        `Mi amor Janice,
+
 Cada conversación contigo me confirma que eres alguien único, alguien que ilumina incluso los momentos más difíciles. Me siento profundamente agradecido con la vida por haberte puesto en mi camino y por permitirme coincidir contigo de esta manera tan especial.
 
 Hoy quiero que sepas algo muy importante para mí: me gustas mucho, me atrae tu esencia, tu risa, tu forma de ver el mundo. Me encanta cómo me haces sentir y cómo haces que todo parezca más sencillo y bonito. Me encantas en la forma en que quiero que te sientas cómoda conmigo, libre de ser tú misma, sin máscaras ni miedos.`,
-        `Tengo muchas ganas de verte, de abrazarte fuerte, de mirarte a los ojos y sentir que estamos exactamente donde debemos estar. Tengo tantas ganas de hacerte feliz, de demostrarte con hechos que estoy dispuesto a dar lo mejor de mí, porque tú lo vales, porque nuestra historia lo vale.
+
+        `Tengo muchas ganas de verte, de abrazarte fuerte, de mirarte a los ojos y sentir que estamos exactamente donde debemos estar. Tengo tantas ganas de hacerte feliz, de seguir demostrándote con hechos que estoy dispuesto a dar lo mejor de mí, porque tú lo vales, porque nuestra historia lo vale.
 
 Hoy, más que nunca, quiero apostar por ti, por nosotros, por esta oportunidad que la vida nos está regalando. Quiero caminar a tu lado, escribir nuevos recuerdos y demostrarte con cada gesto que mi intención es clara: cuidarte, respetarte y amarte como te mereces.
 
@@ -313,7 +321,6 @@ Con todo mi cariño,
 Diego`,
       ];
 
-      // ---- ELEMENTOS ----
       const letterEl = document.getElementById("letter");
       const signEl = document.getElementById("signature");
       const prevBtn = document.getElementById("btn-prev");
@@ -349,16 +356,32 @@ Diego`,
         });
 
         let i = 0;
+
         function step() {
-          const ch = text.charAt(i++);
-          el.innerHTML += ch === "\n" ? "<br>" : ch;
-          if (i <= text.length) {
+          if (i < text.length) {
+            const ch = text.charAt(i++);
+            el.innerHTML += ch === "\n" ? "<br>" : ch;
             typingTimer = setTimeout(step, speed);
           } else {
             typing = false;
-            onDone && onDone();
+            if (onDone) onDone();
           }
         }
+
+        step();
+      }
+
+      function typeSignature(text, speed = 28) {
+        signEl.textContent = "";
+        let j = 0;
+
+        function step() {
+          if (j < text.length) {
+            signEl.textContent += text.charAt(j++);
+            setTimeout(step, speed);
+          }
+        }
+
         step();
       }
 
@@ -376,42 +399,26 @@ Diego`,
         });
       }
 
-      function typeSignature(text, speed = 28) {
-        signEl.textContent = "";
-        let j = 0;
-        (function step() {
-          signEl.textContent += text.charAt(j++);
-          if (j <= text.length) setTimeout(step, speed);
-        })();
-      }
-
       nextBtn.addEventListener("click", () => {
-        if (typing) {
-          clearTyping();
-        }
+        if (typing) clearTyping();
         if (currentPage < pages.length - 1) {
           showPage(currentPage + 1);
         }
       });
 
       prevBtn.addEventListener("click", () => {
-        if (typing) {
-          clearTyping();
-        }
+        if (typing) clearTyping();
         if (currentPage > 0) {
           showPage(currentPage - 1);
         }
       });
-
-      showPage(0);
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowRight" && !nextBtn.disabled) nextBtn.click();
         if (e.key === "ArrowLeft" && !prevBtn.disabled) prevBtn.click();
       });
 
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      }
+      showPage(0);
     </script>
   </body>
 </html>
